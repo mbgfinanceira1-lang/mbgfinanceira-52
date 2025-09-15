@@ -38,28 +38,63 @@ public_html/
 
 ## 🔧 Troubleshooting
 
+### Tela em Branco (Blank Screen) - PROBLEMA MAIS COMUM
+1. **Verificar console do navegador:**
+   - Abra F12 → Console
+   - Procure por erros de JavaScript ou assets não encontrados
+   
+2. **Verificar estrutura de arquivos:**
+   ```
+   public_html/
+   ├── index.html
+   ├── assets/ (pasta completa do dist/assets)
+   ├── .htaccess
+   └── favicon.ico
+   ```
+   
+3. **Testar arquivo estático:**
+   - Crie um arquivo test.html simples para verificar se o servidor funciona
+   - `<html><body><h1>Teste</h1></body></html>`
+
 ### Error 500 (Internal Server Error)
-1. **Check .htaccess file:**
-   - Ensure .htaccess is uploaded to the root of public_html/
-   - Verify the file has correct permissions (644)
+1. **Permissões de arquivo (CRÍTICO no Hostinger):**
+   - Pastas: 755 permissions
+   - Arquivos: 644 permissions
+   - Use o File Manager do Hostinger para ajustar
    
-2. **File permissions:**
-   - Set folders to 755 permissions
-   - Set files to 644 permissions
+2. **Verificar .htaccess:**
+   - Renomeie temporariamente .htaccess para .htaccess-backup
+   - Se o site funcionar, o problema está no .htaccess
+   - Teste com versão simplificada
    
-3. **Hostinger specific:**
-   - Go to Hostinger Panel > Advanced > Error Logs
-   - Check error logs for specific issues
-   - Ensure you're uploading to the correct domain folder
+3. **Logs de erro do Hostinger:**
+   - Painel Hostinger > Avançado > Logs de Erro
+   - Verificar erros específicos nos últimos minutos
    
-4. **Upload verification:**
-   - Verify index.html is in the root of public_html/
-   - Check that all files from dist/ were uploaded completely
-   
-### Other Issues
-- If routes don't work: Check if `.htaccess` is uploaded correctly
-- If assets don't load: Check file paths in the built files  
-- If WhatsApp doesn't work: Verify phone number format in constants.ts
+4. **Upload completo:**
+   - Verificar se TODOS os arquivos da pasta dist/ foram enviados
+   - Especialmente a pasta assets/ completa
+
+### Error 404 nas rotas (React Router)
+1. **Verificar se .htaccess está na raiz do public_html**
+2. **Testar rota direta:** acesse dominio.com/sobre
+3. **Se não funcionar, usar .htaccess simplificado:**
+   ```
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteRule . /index.html [L]
+   ```
+
+### Assets não carregam (CSS/JS/Images)
+- Verificar se a pasta assets/ foi enviada completamente
+- Verificar permissões da pasta assets/ (755)
+- Testar acesso direto: dominio.com/assets/index-xxx.css
+- Se não carrega, reenviar a pasta assets/
+
+### WhatsApp não funciona
+- Verificar formato do número em constants.ts (5511999999999)
+- Testar link direto: wa.me/5511999999999
 
 ## 📞 Contact Information
 Update company info in `src/lib/constants.ts` before building.
