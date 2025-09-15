@@ -2,11 +2,14 @@ import { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { MBGButton } from "./ui/mbg-button";
+import { useLanguage } from "@/hooks/useLanguage";
+import LanguageSelector from "./LanguageSelector";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownTimer = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
+  const { t } = useLanguage();
   const handleMouseEnterServices = () => {
     if (dropdownTimer.current) {
       clearTimeout(dropdownTimer.current);
@@ -30,45 +33,46 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/' ? 'text-primary font-semibold' : ''}`}>
-            Home
+            {t('nav.home')}
           </Link>
           <Link to="/sobre" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/sobre' ? 'text-primary font-semibold' : ''}`}>
-            Sobre Nós
+            {t('nav.about')}
           </Link>
           
           {/* Services Dropdown */}
           <div className="relative" onMouseEnter={handleMouseEnterServices} onMouseLeave={handleMouseLeaveServices}>
             <button className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
-              <span>Serviços</span>
+              <span>{t('nav.services')}</span>
               <ChevronDown className="w-4 h-4" />
             </button>
             
             {isServicesOpen && <div className="absolute top-full left-0 w-56 bg-card border border-border rounded-lg shadow-elegant z-50" onMouseEnter={handleMouseEnterServices} onMouseLeave={handleMouseLeaveServices}>
                 <Link to="/credito-pessoal" className="block px-4 py-3 text-sm text-card-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-t-lg">
-                  Crédito Pessoal
+                  {t('nav.personalCredit')}
                 </Link>
                 <Link to="/poupanca-especial" className="block px-4 py-3 text-sm text-card-foreground hover:bg-primary/10 hover:text-primary transition-colors rounded-b-lg">
-                  Poupança Especial
+                  {t('nav.specialSavings')}
                 </Link>
               </div>}
           </div>
           
           <Link to="/vantagens" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/vantagens' ? 'text-primary font-semibold' : ''}`}>
-            Vantagens
+            {t('nav.benefits')}
           </Link>
           <Link to="/blog" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/blog' ? 'text-primary font-semibold' : ''}`}>
-            Blog
+            {t('nav.blog')}
           </Link>
           <Link to="/contato" className={`text-foreground hover:text-primary transition-colors ${location.pathname === '/contato' ? 'text-primary font-semibold' : ''}`}>
-            Contato
+            {t('nav.contact')}
           </Link>
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
+        {/* Language Selector & CTA Button */}
+        <div className="hidden md:flex items-center space-x-3">
+          <LanguageSelector />
           <MBGButton asChild>
             <a href="https://wa.me/5511978419191" target="_blank" rel="noopener noreferrer">
-              Fale Conosco
+              {t('nav.contactUs')}
             </a>
           </MBGButton>
         </div>
@@ -83,30 +87,33 @@ const Header = () => {
       {isMenuOpen && <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur">
           <nav className="container py-4 space-y-4">
             <Link to="/" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Home
+              {t('nav.home')}
             </Link>
             <Link to="/sobre" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Sobre Nós
+              {t('nav.about')}
             </Link>
             <Link to="/credito-pessoal" className="block text-foreground hover:text-primary transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Crédito Pessoal
+              {t('nav.personalCredit')}
             </Link>
             <Link to="/poupanca-especial" className="block text-foreground hover:text-primary transition-colors pl-4" onClick={() => setIsMenuOpen(false)}>
-              Poupança Especial
+              {t('nav.specialSavings')}
             </Link>
             <Link to="/vantagens" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Vantagens
+              {t('nav.benefits')}
             </Link>
             <Link to="/blog" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Blog
+              {t('nav.blog')}
             </Link>
             <Link to="/contato" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Contato
+              {t('nav.contact')}
             </Link>
-            <div className="pt-4">
+            <div className="pt-4 space-y-3">
+              <div className="flex justify-center">
+                <LanguageSelector />
+              </div>
               <MBGButton asChild className="w-full">
                 <a href="https://wa.me/5511978419191" target="_blank" rel="noopener noreferrer">
-                  Fale Conosco
+                  {t('nav.contactUs')}
                 </a>
               </MBGButton>
             </div>
