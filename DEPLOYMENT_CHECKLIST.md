@@ -31,6 +31,25 @@
 - [ ] Test on mobile devices
 
 ## 🔍 Troubleshooting Common Issues
+
+### ❌ Error 500 (Internal Server Error) - Most Common Issue
+1. **File Permissions (Critical):**
+   - Set all folders to 755 permissions in Hostinger File Manager
+   - Set all files to 644 permissions
+   - This is the #1 cause of Error 500 on Hostinger
+
+2. **Upload Location:**
+   - Ensure files are uploaded to the correct domain's public_html folder
+   - NOT in a subfolder unless using a subdomain
+
+3. **Complete Upload:**
+   - Upload ALL contents of dist/ folder (not the dist folder itself)
+   - Upload .htaccess to the same location as index.html
+
+4. **Hostinger Error Logs:**
+   - Check Hostinger Panel > Advanced > Error Logs for specific errors
+
+### Other Issues
 - **Routes show 404 error:** Check if `.htaccess` is uploaded correctly
 - **Images don't load:** Verify all image files were uploaded from `dist/assets/`
 - **WhatsApp doesn't work:** Check phone number format in `src/lib/constants.ts`

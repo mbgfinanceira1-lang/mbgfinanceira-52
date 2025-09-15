@@ -1,4 +1,4 @@
-// Company Information - Migrated from WordPress theme
+// Company Information
 export const COMPANY_INFO = {
   name: "MBG Financeira",
   cnpj: "12.345.678/0001-90",
@@ -17,7 +17,7 @@ export const WHATSAPP_MESSAGES = {
   contact: "Olá! Vim através do site e gostaria de falar com um especialista."
 };
 
-// Testimonials Data - Migrated from WordPress custom post type
+// Testimonials Data
 export const TESTIMONIALS = [
   {
     id: 1,

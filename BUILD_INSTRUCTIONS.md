@@ -37,8 +37,28 @@ public_html/
 - **SSL:** Enable for better security
 
 ## 🔧 Troubleshooting
+
+### Error 500 (Internal Server Error)
+1. **Check .htaccess file:**
+   - Ensure .htaccess is uploaded to the root of public_html/
+   - Verify the file has correct permissions (644)
+   
+2. **File permissions:**
+   - Set folders to 755 permissions
+   - Set files to 644 permissions
+   
+3. **Hostinger specific:**
+   - Go to Hostinger Panel > Advanced > Error Logs
+   - Check error logs for specific issues
+   - Ensure you're uploading to the correct domain folder
+   
+4. **Upload verification:**
+   - Verify index.html is in the root of public_html/
+   - Check that all files from dist/ were uploaded completely
+   
+### Other Issues
 - If routes don't work: Check if `.htaccess` is uploaded correctly
-- If assets don't load: Check file paths in the built files
+- If assets don't load: Check file paths in the built files  
 - If WhatsApp doesn't work: Verify phone number format in constants.ts
 
 ## 📞 Contact Information
