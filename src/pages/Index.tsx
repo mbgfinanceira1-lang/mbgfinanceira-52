@@ -18,12 +18,14 @@ import SpecialistConsultation from "@/components/SpecialistConsultation";
 import Hero3DFinancial from "@/components/Hero3DFinancial";
 import { MBGButton } from "@/components/ui/mbg-button";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/hooks/useLanguage";
 import { TESTIMONIALS } from "@/lib/constants";
 import heroBackground from "@/assets/hero-bg-professional.jpg";
 
 const Index = () => {
   const { ref: featuresRef, visibleItems: visibleFeatures } = useStaggeredAnimation(4, 150);
   const { ref: testimonialsRef, visibleItems: visibleTestimonials } = useStaggeredAnimation(3, 200);
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,19 +63,19 @@ const Index = () => {
         <div className="container relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="mb-6 animate-fade-in-up">
-              BEM-VINDO(A) À<br />
+              {t('home.hero.welcome')}<br />
               <span className="bg-gradient-gold bg-clip-text text-transparent">
-                MBG FINANCEIRA
+                {t('home.hero.company')}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              Crédito Simples e Poupança Segura.<br />
-              Soluções financeiras sem burocracia para transformar seus planos em realidade.
+              {t('home.hero.subtitle')}<br />
+              {t('home.hero.description')}
             </p>
             <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <MBGButton asChild size="xl" className="shadow-gold-glow">
-                <a href="https://wa.me/5511978419191?text=Olá! Gostaria de simular um crédito. Poderia me ajudar?" target="_blank" rel="noopener noreferrer">
-                  Simule seu Crédito Agora
+                <a href={`https://wa.me/5511978419191?text=${encodeURIComponent(t('whatsapp.credit'))}`} target="_blank" rel="noopener noreferrer">
+                  {t('home.hero.cta')}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </MBGButton>
@@ -86,9 +88,9 @@ const Index = () => {
       <section id="servicos" className="py-20 bg-card/50">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="mb-4 animate-fade-in-up">Soluções Financeiras ao seu Alcance</h2>
+            <h2 className="mb-4 animate-fade-in-up">{t('home.services.title')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
-              Oferecemos produtos financeiros pensados para facilitar sua vida e realizar seus sonhos.
+              {t('home.services.subtitle')}
             </p>
           </div>
           
@@ -96,19 +98,19 @@ const Index = () => {
             <div className="animate-slide-in-left">
               <ServiceCard
                 icon={CreditCard}
-                title="Crédito Facilitado"
-                description="Acesse o crédito que você precisa com pagamentos semanais flexíveis e condições justas. Processo rápido e sem complicação."
+                title={t('home.services.credit.title')}
+                description={t('home.services.credit.description')}
                 href="/credito-pessoal"
-                buttonText="Saiba Mais"
+                buttonText={t('common.learnMore')}
               />
             </div>
             <div className="animate-slide-in-right">
               <ServiceCard
                 icon={PiggyBank}
-                title="Poupança Especial"
-                description="Multiplique seus lucros. Faça seu dinheiro render com total segurança e garantia. Rentabilidade superior à poupança tradicional."
+                title={t('home.services.savings.title')}
+                description={t('home.services.savings.description')}
                 href="/poupanca-especial"
-                buttonText="Saiba Mais"
+                buttonText={t('common.learnMore')}
               />
             </div>
           </div>
@@ -119,9 +121,9 @@ const Index = () => {
       <section id="diferenciais" className="py-20">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="mb-4 animate-fade-in-up">Vantagens que só a MBG Oferece</h2>
+            <h2 className="mb-4 animate-fade-in-up">{t('home.features.title')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
-              Descubra por que somos a escolha certa para suas necessidades financeiras.
+              {t('home.features.subtitle')}
             </p>
           </div>
           
@@ -129,29 +131,29 @@ const Index = () => {
             <div className={`${visibleFeatures.includes(0) ? 'animate-scale-in animate-hover-lift' : 'opacity-0'}`}>
               <FeatureCard
                 icon={CheckCircle}
-                title="Sem Burocracia"
-                description="Processo simplificado e ágil. Menos papelada, mais agilidade para você."
+                title={t('features.noBureaucracy')}
+                description={t('features.noBureaucracy.desc')}
               />
             </div>
             <div className={`${visibleFeatures.includes(1) ? 'animate-scale-in animate-hover-lift' : 'opacity-0'}`}>
               <FeatureCard
                 icon={Clock}
-                title="Pagamento Semanal Flexível"
-                description="Parcelas semanais que se adaptam ao seu orçamento e fluxo de renda."
+                title={t('features.flexiblePayment')}
+                description={t('features.flexiblePayment.desc')}
               />
             </div>
             <div className={`${visibleFeatures.includes(2) ? 'animate-scale-in animate-hover-lift' : 'opacity-0'}`}>
               <FeatureCard
                 icon={Gift}
-                title="Programa de Vantagens Exclusivo"
-                description="Sorteios mensais e benefícios exclusivos para nossos clientes fiéis."
+                title={t('features.benefits')}
+                description={t('features.benefits.desc')}
               />
             </div>
             <div className={`${visibleFeatures.includes(3) ? 'animate-scale-in animate-hover-lift' : 'opacity-0'}`}>
               <FeatureCard
                 icon={Shield}
-                title="Segurança e Confiança"
-                description="Operações 100% seguras com total transparência em todas as condições."
+                title={t('features.security')}
+                description={t('features.security.desc')}
               />
             </div>
           </div>
@@ -162,9 +164,9 @@ const Index = () => {
       <section id="depoimentos" className="py-20 bg-card/50">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="mb-4 animate-fade-in-up">A Confiança dos Nossos Clientes</h2>
+            <h2 className="mb-4 animate-fade-in-up">{t('home.testimonials.title')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
-              Veja o que nossos clientes dizem sobre os nossos serviços e resultados.
+              {t('home.testimonials.subtitle')}
             </p>
           </div>
           
@@ -190,15 +192,14 @@ const Index = () => {
       <section id="cta-final" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-gold-radial opacity-10"></div>
         <div className="container relative z-10 text-center">
-          <h2 className="mb-6 animate-fade-in-up">Pronto para começar?</h2>
+          <h2 className="mb-6 animate-fade-in-up">{t('home.cta.title')}</h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in-up">
-            Fale com um de nossos especialistas e descubra a melhor solução para você. 
-            Estamos aqui para transformar seus planos em realidade.
+            {t('home.cta.subtitle')}
           </p>
           <div className="animate-fade-in-up">
             <MBGButton asChild size="xl" className="shadow-gold-glow">
-              <a href="https://wa.me/5511978419191" target="_blank" rel="noopener noreferrer">
-                Fale Conosco pelo WhatsApp
+              <a href={`https://wa.me/5511978419191?text=${encodeURIComponent(t('whatsapp.contact'))}`} target="_blank" rel="noopener noreferrer">
+                {t('home.cta.button')}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </MBGButton>

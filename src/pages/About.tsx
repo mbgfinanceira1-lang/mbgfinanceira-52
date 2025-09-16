@@ -2,16 +2,19 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PageBanner from "../components/PageBanner";
 import FeatureCard from "../components/FeatureCard";
+import { useLanguage } from "../hooks/useLanguage";
 import { Shield, Users, Target, Heart } from "lucide-react";
 
 const About = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       <PageBanner 
-        title="Nossa História, Seu Futuro Financeiro"
-        subtitle="Conheça a MBG Financeira e nossa missão de transformar vidas através de soluções financeiras acessíveis"
+        title={t('about.banner.title')}
+        subtitle={t('about.banner.subtitle')}
       />
 
       <main>
@@ -20,36 +23,33 @@ const About = () => {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                MBG: Nascemos para Descomplicar
+                {t('about.mission.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                A MBG Financeira nasceu com o propósito de democratizar o acesso aos serviços financeiros no Brasil. 
-                Acreditamos que todos merecem oportunidades justas e transparentes para realizar seus sonhos e superar 
-                desafios financeiros. Nossa missão é oferecer crédito acessível e poupança segura, sempre com a 
-                confiança e o respeito que nossos clientes merecem.
+                {t('about.mission.description')}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <FeatureCard
                 icon={Shield}
-                title="Confiança"
-                description="Transparência total em todas as nossas operações e relacionamentos com clientes."
+                title={t('about.values.trust')}
+                description={t('about.values.trust.desc')}
               />
               <FeatureCard
                 icon={Users}
-                title="Acessibilidade"
-                description="Soluções financeiras pensadas para atender todos os perfis de brasileiros."
+                title={t('about.values.accessibility')}
+                description={t('about.values.accessibility.desc')}
               />
               <FeatureCard
                 icon={Target}
-                title="Simplicidade"
-                description="Processos descomplicados e atendimento humanizado para facilitar sua vida."
+                title={t('about.values.simplicity')}
+                description={t('about.values.simplicity.desc')}
               />
               <FeatureCard
                 icon={Heart}
-                title="Compromisso"
-                description="Dedicação genuína em ajudar nossos clientes a alcançarem seus objetivos."
+                title={t('about.values.commitment')}
+                description={t('about.values.commitment.desc')}
               />
             </div>
           </div>
@@ -60,25 +60,25 @@ const About = () => {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Nossa Casa é sua Casa
+                {t('about.location.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Visite-nos em nossa sede e conheça pessoalmente nossa equipe de especialistas financeiros.
+                {t('about.location.subtitle')}
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="p-6 bg-card border border-border rounded-lg shadow-elegant">
-                  <h3 className="text-xl font-semibold text-primary mb-4">Endereço</h3>
+                  <h3 className="text-xl font-semibold text-primary mb-4">{t('about.location.address')}</h3>
                   <p className="text-muted-foreground mb-4">
                     Rua Aparecida, 164 - Canindé/SP<br />
                     CEP: 03031-000
                   </p>
                   <div className="space-y-2 text-sm text-muted-foreground">
-                    <p><strong>Horário de Funcionamento:</strong></p>
-                    <p>Segunda a Sexta: 8h às 18h</p>
-                    <p>Sábado: 8h às 12h</p>
+                    <p><strong>{t('about.location.hours')}</strong></p>
+                    <p>{t('about.location.weekdays')}</p>
+                    <p>{t('about.location.saturday')}</p>
                   </div>
                 </div>
               </div>

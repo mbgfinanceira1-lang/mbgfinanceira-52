@@ -10,45 +10,46 @@ import {
 } from "lucide-react";
 import StatsSection from "./StatsSection";
 import { MBGButton } from "./ui/mbg-button";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const SpecialistConsultation = () => {
+  const { t } = useLanguage();
+  
   const advantages = [
     {
       icon: Users,
-      title: "Análise Personalizada",
-      description: "Nossos especialistas analisam seu perfil financeiro para oferecer as melhores condições."
+      title: t('specialist.analysis'),
+      description: t('specialist.analysis.desc')
     },
     {
       icon: TrendingUp,
-      title: "Condições Personalizadas",
-      description: "Acesso a condições exclusivas e vantagens especiais para nossos clientes."
+      title: t('specialist.conditions'),
+      description: t('specialist.conditions.desc')
     },
     {
       icon: Shield,
-      title: "Atendimento Exclusivo",
-      description: "Suporte dedicado durante todo o processo, do início ao final."
+      title: t('specialist.exclusive'),
+      description: t('specialist.exclusive.desc')
     },
     {
       icon: Clock,
-      title: "Resposta Rápida",
-      description: "Análise e resposta em até 24 horas úteis."
+      title: t('specialist.response'),
+      description: t('specialist.response.desc')
     },
     {
       icon: Award,
-      title: "Expertise Comprovada",
-      description: "Mais de 10 anos de experiência no mercado financeiro."
+      title: t('specialist.expertise'),
+      description: t('specialist.expertise.desc')
     },
     {
       icon: CheckCircle,
-      title: "Processo Simplificado",
-      description: "Menos burocracia, mais agilidade para você."
+      title: t('specialist.process'),
+      description: t('specialist.process.desc')
     }
   ];
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      "Olá! Gostaria de agendar uma consultoria financeira personalizada com um especialista da MBG. Podem me ajudar com as melhores condições para meu perfil?"
-    );
+    const message = encodeURIComponent(t('whatsapp.consultation'));
     window.open(`https://wa.me/5511978419191?text=${message}`, '_blank');
   };
 
@@ -58,11 +59,10 @@ const SpecialistConsultation = () => {
       <div className="container relative z-10">
         <div className="text-center mb-16">
           <h2 className="mb-6 animate-fade-in-up">
-            Consultoria Financeira Personalizada
+            {t('specialist.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up animate-stagger-1">
-            Nossos especialistas analisam seu perfil e oferecem as melhores condições 
-            do mercado. Atendimento exclusivo e soluções sob medida para você.
+            {t('specialist.subtitle')}
           </p>
         </div>
 
