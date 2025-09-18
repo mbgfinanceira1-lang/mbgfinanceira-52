@@ -2,7 +2,7 @@ import { Instagram, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { COMPANY_INFO } from "@/lib/constants";
 import { useLanguage } from "@/hooks/useLanguage";
-import { generateWhatsAppUrl } from "@/lib/whatsapp";
+import { generateWhatsAppUrl, getWhatsAppMessage } from "@/lib/whatsapp";
 const Footer = () => {
   const { t } = useLanguage();
   
@@ -44,7 +44,7 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href={generateWhatsAppUrl(t('whatsappMessages.default'))} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                <a href={generateWhatsAppUrl(t('whatsapp.contact'))} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   {COMPANY_INFO.phone}
                 </a>
               </li>

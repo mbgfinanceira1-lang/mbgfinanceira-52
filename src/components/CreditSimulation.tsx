@@ -3,11 +3,9 @@ import { Calculator, DollarSign, Calendar, Phone } from "lucide-react";
 import { MBGButton } from "./ui/mbg-button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { generateWhatsAppUrl } from "@/lib/whatsapp";
-import { useLanguage } from "@/hooks/useLanguage";
+import { generateWhatsAppUrl, getWhatsAppMessage } from "@/lib/whatsapp";
 
 const CreditSimulation = () => {
-  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -68,7 +66,7 @@ const CreditSimulation = () => {
     e.preventDefault();
     
     // Simulate form submission
-    const whatsappMessage = t('whatsappMessages.simulation');
+    const whatsappMessage = `${getWhatsAppMessage('simulationForm')} Nome: ${formData.name}, Email: ${formData.email}, Telefone: ${formData.phone}, Valor desejado: ${formData.amount}`;
     const whatsappUrl = generateWhatsAppUrl(whatsappMessage);
     window.open(whatsappUrl, '_blank');
   };
@@ -93,7 +91,7 @@ const CreditSimulation = () => {
                 variant="outline" 
                 size="sm"
                 onClick={() => {
-                  const whatsappUrl = generateWhatsAppUrl(t('whatsappMessages.credit'));
+                  const whatsappUrl = generateWhatsAppUrl(getWhatsAppMessage('simulation'));
                   window.open(whatsappUrl, '_blank');
                 }}
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"

@@ -10,15 +10,6 @@ interface LanguageContextType {
 
 const translations = {
   pt: {
-    // WhatsApp Messages
-    whatsappMessages: {
-      default: 'Olá! Gostaria de saber mais sobre os serviços da MBG Financeira.',
-      credit: 'Olá! Tenho interesse no Crédito Pessoal da MBG Financeira. Poderiam me ajudar com mais informações?',
-      savings: 'Olá! Me interesso pela Poupança Especial da MBG Financeira. Poderiam me fornecer mais detalhes?',
-      consultation: 'Olá! Gostaria de agendar uma consulta com um especialista financeiro.',
-      simulation: 'Olá! Acabei de fazer uma simulação de crédito e gostaria de falar com um especialista.'
-    },
-    
     // Header
     'nav.home': 'Home',
     'nav.about': 'Sobre Nós',
@@ -252,15 +243,6 @@ const translations = {
     }
   },
   es: {
-    // WhatsApp Messages
-    whatsappMessages: {
-      default: '¡Hola! Me gustaría saber más sobre los servicios de MBG Financiera.',
-      credit: '¡Hola! Tengo interés en el Crédito Personal de MBG Financiera. ¿Podrían ayudarme con más información?',
-      savings: '¡Hola! Me interesa el Ahorro Especial de MBG Financiera. ¿Podrían brindarme más detalles?',
-      consultation: '¡Hola! Me gustaría programar una consulta con un especialista financiero.',
-      simulation: '¡Hola! Acabo de hacer una simulación de crédito y me gustaría hablar con un especialista.'
-    },
-    
     // Header
     'nav.home': 'Inicio',
     'nav.about': 'Acerca de',
@@ -488,10 +470,8 @@ const translations = {
     'whatsapp.consultation': '¡Hola! Me gustaría agendar una consultoría financiera personalizada con un especialista de MBG. ¿Pueden ayudarme con las mejores condiciones para mi perfil?',
     
     // Floating WhatsApp
-    floatingWhatsApp: {
-      needCredit: '💰 ¿Necesitas Crédito?',
-      talkToSpecialist: 'Habla con Nuestro Especialista'
-    }
+    'floatingWhatsApp.needCredit': '💰 ¿Necesitas Crédito?',
+    'floatingWhatsApp.talkToSpecialist': 'Habla con Nuestro Especialista'
   }
 };
 
@@ -508,18 +488,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [language]);
 
   const t = (key: string): string => {
-    const keys = key.split('.');
-    let result: any = translations[language];
-    
-    for (const k of keys) {
-      if (result && typeof result === 'object' && k in result) {
-        result = result[k];
-      } else {
-        return key;
-      }
-    }
-    
-    return typeof result === 'string' ? result : key;
+    return translations[language][key as keyof typeof translations.pt] || key;
   };
 
   return (

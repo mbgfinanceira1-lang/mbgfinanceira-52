@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { generateWhatsAppUrl } from "@/lib/whatsapp";
+import { generateWhatsAppUrl, getWhatsAppMessage } from "@/lib/whatsapp";
 import { useLanguage } from "@/hooks/useLanguage";
 import specialistAvatar from "@/assets/specialist-avatar.jpg";
 
@@ -11,8 +11,7 @@ const FloatingWhatsApp = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const message = t('whatsappMessages.default');
-    const whatsappUrl = generateWhatsAppUrl(message);
+    const whatsappUrl = generateWhatsAppUrl(getWhatsAppMessage('default'));
     window.open(whatsappUrl, "_blank");
   };
 
@@ -20,9 +19,9 @@ const FloatingWhatsApp = () => {
     <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
       {/* Mensagem Flutuante */}
       <div className="absolute bottom-20 right-2 animate-fade-in delay-1000">
-      <div className="bg-gradient-gold text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium whitespace-nowrap">
-        {t('floatingWhatsApp.needCredit')}
-      </div>
+        <div className="bg-gradient-gold text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium whitespace-nowrap">
+          {t('floatingWhatsApp.needCredit')}
+        </div>
         <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gold"></div>
       </div>
       {/* Tooltip */}
