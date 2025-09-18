@@ -3,6 +3,7 @@ import { Calculator, DollarSign, Calendar, Phone } from "lucide-react";
 import { MBGButton } from "./ui/mbg-button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
+import { generateWhatsAppUrl, getWhatsAppMessage } from "@/lib/whatsapp";
 
 const CreditSimulation = () => {
   const [formData, setFormData] = useState({
@@ -65,8 +66,8 @@ const CreditSimulation = () => {
     e.preventDefault();
     
     // Simulate form submission
-    const whatsappMessage = `Olá! Gostaria de solicitar um crédito de ${formData.amount}. Meus dados: Nome: ${formData.name}, Email: ${formData.email}, Telefone: ${formData.phone}`;
-    const whatsappUrl = `https://wa.me/5511978419191?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappMessage = `${getWhatsAppMessage('simulationForm')} Nome: ${formData.name}, Email: ${formData.email}, Telefone: ${formData.phone}, Valor desejado: ${formData.amount}`;
+    const whatsappUrl = generateWhatsAppUrl(whatsappMessage);
     window.open(whatsappUrl, '_blank');
   };
 
@@ -90,7 +91,7 @@ const CreditSimulation = () => {
                 variant="outline" 
                 size="sm"
                 onClick={() => {
-                  const whatsappUrl = "https://wa.me/5511978419191?text=Olá! Gostaria de falar com um especialista sobre crédito pessoal.";
+                  const whatsappUrl = generateWhatsAppUrl(getWhatsAppMessage('simulation'));
                   window.open(whatsappUrl, '_blank');
                 }}
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"

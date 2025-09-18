@@ -235,6 +235,12 @@ const translations = {
     'whatsapp.savings': 'Olá! Gostaria de saber mais sobre a Poupança Especial.',
     'whatsapp.contact': 'Olá! Vim através do site e gostaria de falar com um especialista.',
     'whatsapp.consultation': 'Olá! Gostaria de agendar uma consultoria financeira personalizada com um especialista da MBG. Podem me ajudar com as melhores condições para meu perfil?',
+    
+    // Floating WhatsApp
+    floatingWhatsApp: {
+      needCredit: "💰 Precisa de Crédito?",
+      talkToSpecialist: "Fale com Nosso Especialista"
+    }
   },
   es: {
     // Header
@@ -462,6 +468,10 @@ const translations = {
     'whatsapp.savings': '¡Hola! Me gustaría saber más sobre los Ahorros Especiales.',
     'whatsapp.contact': '¡Hola! Vengo del sitio web y me gustaría hablar con un especialista.',
     'whatsapp.consultation': '¡Hola! Me gustaría agendar una consultoría financiera personalizada con un especialista de MBG. ¿Pueden ayudarme con las mejores condiciones para mi perfil?',
+    
+    // Floating WhatsApp
+    'floatingWhatsApp.needCredit': '💰 ¿Necesitas Crédito?',
+    'floatingWhatsApp.talkToSpecialist': 'Habla con Nuestro Especialista'
   }
 };
 

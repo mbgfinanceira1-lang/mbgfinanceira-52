@@ -14,7 +14,9 @@ export const WHATSAPP_MESSAGES = {
   default: "Olá! Gostaria de saber mais sobre os serviços da MBG Financeira.",
   credit: "Olá! Tenho interesse no Crédito Pessoal da MBG Financeira.",
   savings: "Olá! Gostaria de saber mais sobre a Poupança Especial.",
-  contact: "Olá! Vim através do site e gostaria de falar com um especialista."
+  contact: "Olá! Vim através do site e gostaria de falar com um especialista.",
+  simulation: "Olá! Gostaria de falar com um especialista sobre crédito pessoal.",
+  simulationForm: "Olá! Gostaria de solicitar um crédito. Meus dados:"
 };
 
 // Testimonials Data

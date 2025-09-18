@@ -2,9 +2,11 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { generateWhatsAppUrl, getWhatsAppMessage } from "@/lib/whatsapp";
+import { useLanguage } from "@/hooks/useLanguage";
 import specialistAvatar from "@/assets/specialist-avatar.jpg";
 
 const FloatingWhatsApp = () => {
+  const { t } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -18,7 +20,7 @@ const FloatingWhatsApp = () => {
       {/* Mensagem Flutuante */}
       <div className="absolute bottom-20 right-2 animate-fade-in delay-1000">
         <div className="bg-gradient-gold text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium whitespace-nowrap">
-          💰 Precisa de Crédito?
+          {t('floatingWhatsApp.needCredit')}
         </div>
         <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gold"></div>
       </div>
@@ -30,7 +32,7 @@ const FloatingWhatsApp = () => {
         )}
       >
         <div className="text-sm font-medium text-foreground">
-          Fale com Nosso Especialista
+          {t('floatingWhatsApp.talkToSpecialist')}
         </div>
         <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-border"></div>
       </div>
