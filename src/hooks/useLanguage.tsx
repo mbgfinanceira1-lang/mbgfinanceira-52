@@ -237,10 +237,8 @@ const translations = {
     'whatsapp.consultation': 'Olá! Gostaria de agendar uma consultoria financeira personalizada com um especialista da MBG. Podem me ajudar com as melhores condições para meu perfil?',
     
     // Floating WhatsApp
-    floatingWhatsApp: {
-      needCredit: "💰 Precisa de Crédito?",
-      talkToSpecialist: "Fale com Nosso Especialista"
-    }
+    'floatingWhatsApp.needCredit': '💰 Precisa de Crédito?',
+    'floatingWhatsApp.talkToSpecialist': 'Fale com Nosso Especialista'
   },
   es: {
     // Header
