@@ -74,7 +74,7 @@ const Index = () => {
             </p>
             <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <MBGButton asChild size="xl" className="shadow-gold-glow">
-                <a href={`https://wa.me/5511978419191?text=${encodeURIComponent(t('whatsapp.credit'))}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/5511939246324?text=${encodeURIComponent(t('whatsapp.credit'))}`} target="_blank" rel="noopener noreferrer">
                   {t('home.hero.cta')}
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
@@ -198,7 +198,7 @@ const Index = () => {
           </p>
           <div className="animate-fade-in-up">
             <MBGButton asChild size="xl" className="shadow-gold-glow">
-              <a href={`https://wa.me/5511978419191?text=${encodeURIComponent(t('whatsapp.contact'))}`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://wa.me/5511939246324?text=${encodeURIComponent(t('whatsapp.contact'))}`} target="_blank" rel="noopener noreferrer">
                 {t('home.cta.button')}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>

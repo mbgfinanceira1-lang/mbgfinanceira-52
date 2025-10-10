@@ -50,7 +50,7 @@ const SpecialistConsultation = () => {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(t('whatsapp.consultation'));
-    window.open(`https://wa.me/5511978419191?text=${message}`, '_blank');
+    window.open(`https://wa.me/5511939246324?text=${message}`, '_blank');
   };
 
   return (

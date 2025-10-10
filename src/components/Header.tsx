@@ -71,7 +71,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-3">
           <LanguageSelector />
           <MBGButton asChild>
-            <a href="https://wa.me/5511978419191" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5511939246324" target="_blank" rel="noopener noreferrer">
               {t('nav.contactUs')}
             </a>
           </MBGButton>
@@ -112,7 +112,7 @@ const Header = () => {
                 <LanguageSelector />
               </div>
               <MBGButton asChild className="w-full">
-                <a href="https://wa.me/5511978419191" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5511939246324" target="_blank" rel="noopener noreferrer">
                   {t('nav.contactUs')}
                 </a>
               </MBGButton>
