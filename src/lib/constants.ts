@@ -11,12 +11,12 @@ export const COMPANY_INFO = {
 
 // WhatsApp Messages
 export const WHATSAPP_MESSAGES = {
-  default: "Olá! Gostaria de saber mais sobre os serviços da MBG Financeira.",
-  credit: "Olá! Tenho interesse no Crédito Pessoal da MBG Financeira.",
-  savings: "Olá! Gostaria de saber mais sobre a Poupança Especial.",
-  contact: "Olá! Vim através do site e gostaria de falar com um especialista.",
-  simulation: "Olá! Gostaria de falar com um especialista sobre crédito pessoal.",
-  simulationForm: "Olá! Gostaria de solicitar um crédito. Meus dados:"
+  default: "¡Hola! Me gustaría saber más sobre los servicios de MBG Financiera.",
+  credit: "¡Hola! Estoy interesado en el Crédito Personal de MBG Financiera.",
+  savings: "¡Hola! Me gustaría saber más sobre el Ahorro Especial.",
+  contact: "¡Hola! Vine a través del sitio web y me gustaría hablar con un especialista.",
+  simulation: "¡Hola! Me gustaría hablar con un especialista sobre crédito personal.",
+  simulationForm: "¡Hola! Me gustaría solicitar un crédito. Mis datos:"
 };
 
 // Testimonials Data
