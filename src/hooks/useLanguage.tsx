@@ -230,11 +230,11 @@ const translations = {
     'footer.developed': 'Desenvolvido com 💛 para transformar vidas através de soluções financeiras inteligentes.',
     
     // WhatsApp Messages
-    'whatsapp.default': 'Olá! Gostaria de saber mais sobre os serviços da MBG Financeira.',
-    'whatsapp.credit': 'Olá! Tenho interesse no Crédito Pessoal da MBG Financeira.',
-    'whatsapp.savings': 'Olá! Gostaria de saber mais sobre a Poupança Especial.',
-    'whatsapp.contact': 'Olá! Vim através do site e gostaria de falar com um especialista.',
-    'whatsapp.consultation': 'Olá! Gostaria de agendar uma consultoria financeira personalizada com um especialista da MBG. Podem me ajudar com as melhores condições para meu perfil?',
+    'whatsapp.default': '¡Hola! Me gustaría saber más sobre los servicios de MBG Financiera.',
+    'whatsapp.credit': '¡Hola! Tengo interés en el Crédito Personal de MBG Financiera.',
+    'whatsapp.savings': '¡Hola! Me gustaría saber más sobre los Ahorros Especiales.',
+    'whatsapp.contact': '¡Hola! Vengo del sitio web y me gustaría hablar con un especialista.',
+    'whatsapp.consultation': '¡Hola! Me gustaría agendar una consultoría financiera personalizada con un especialista de MBG. ¿Pueden ayudarme con las mejores condiciones para mi perfil?',
     
     // Floating WhatsApp
     'floatingWhatsApp.needCredit': '💰 Precisa de Crédito?',
