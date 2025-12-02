@@ -2,11 +2,11 @@
 export const COMPANY_INFO = {
   name: "MBG Financeira",
   cnpj: "12.345.678/0001-90",
-  whatsapp: "5511939246324",
+  whatsapp: "593968872067",
   address: "R. Aparecida, 164 - Canindé, São Paulo",
   instagram: "@mbgfinanceira",
   email: "contato@mbgfinanceira.com.br",
-  phone: "(11) 93924-6324"
+  phone: "+593 96 887 2067"
 };
 
 // WhatsApp Messages
